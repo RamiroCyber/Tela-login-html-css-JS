@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Krona One', sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.title-base {
+  color: aliceblue;
+}
+
+.title-account {
+  color: #48af9b;
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 2rem;
+}
+.description-primary {
+  color: aliceblue;
+}
+
+.description-secondary {
+  color: #95a5a6;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  border-radius: 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: aliceblue;
+  padding: 0.7rem 1.12rem;
+  cursor: pointer;
+  font-weight: bold;
+  width: 10rem;
+  align-self: center;
+  border-width: 0;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background-color: transparent;
+  border: 1px solid;
+}
+
+.btn-primary:hover {
+  background-color: aliceblue;
+  color: #48af9b;
+  transition: 0.8s;
+}
+
+.btn-secondary {
+  background-color: #48af9b;
+  border: 1px solid #48af9b;
+}
+.btn-secondary:hover {
+  color: #48af9b;
+  background-color: transparent;
+  border: 1px solid #48af9b;
+  transition: 0.8s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #95a5a6;
+}
+
+.content {
+  border-radius: 15px;
+  background-color: white;
+  width: 70rem;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  color: #95a5a6;
+  padding: 0 0.5rem;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  background-color: #48af9b;
+  width: 40.1%;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.label {
+  background-color: #ecf0f1;
+  margin: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.list-social {
+  display: flex;
+  list-style-type: none;
+  margin: 0.6rem 0;
+}
+
+.item-social a {
+  color: #95a5a6;
+  padding: 0 0.9rem;
+  font-size: 2.5rem;
+}
+
+.item-social:hover a {
+  color: black;
+  transition: 0.5s;
+}
+
+.content-first {
+  display: flex;
+}
+
+.content-first .second-column {
+  z-index: 11;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  font-size: 20px;
+  text-align: center;
+}
+
+.form input {
+  height: 2.8rem;
+  background-color: #ecf0f1;
+  border: none;
+  width: 100%;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+  -webkit-text-fill-color: black !important;
+}
+
+.first-column {
+  text-align: center;
+  width: 40%;
+  z-index: 10;
+  font-size: 3rem;
+}
+
+.second-column {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-second {
+  position: absolute;
+  display: flex;
+}
+
+.content-second .first-column {
+  order: 2;
+  z-index: -1;
+}
+
+.content-second .second-column {
+  order: 1;
+  z-index: -1;
+}
+
+.forgot {
+  color: #95a5a6;
+  font-size: 15px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.sign-in .content-first .first-column,
+.sign-in .content-first .second-column {
+  z-index: -1;
+}
+
+.sign-in .content-second .second-column {
+  z-index: 11;
+}
+
+.sign-in .content-second .first-column {
+  z-index: 15;
+}
+
+.sign-in .content::before {
+  left: 60%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  animation: sizein 1.5s;
+  z-index: 13;
+}
+
+.sign-up .content::before {
+  left: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  animation: sizeup 1.5s;
+  z-index: 10;
+}
+
+.sign-up .content-second .second-column {
+  z-index: -1;
+}
+
+.sign-up .content-first .second-column {
+  z-index: 4;
+}
+
+.sign-up .content-first .first-column {
+  z-index: 13;
+}
+
+/*======animação css======*/
+@keyframes sizein {
+  from {
+    left: 0;
+    width: 40%;
+  }
+
+  25% {
+    left: 5%;
+    width: 50%;
+  }
+
+  50% {
+    left: 25%;
+    width: 60%;
+  }
+
+  75% {
+    left: 45%;
+    width: 50%;
+  }
+  to {
+    left: 60%;
+    width: 40%;
+  }
+}
+
+@keyframes sizeup {
+  from {
+    left: 60%;
+    width: 40%;
+  }
+
+  25% {
+    left: 45%;
+    width: 50%;
+  }
+
+  50% {
+    left: 25%;
+    width: 60%;
+  }
+
+  75% {
+    left: 5%;
+    width: 50%;
+  }
+  to {
+    left: 0%;
+    width: 40%;
+  }
+}
